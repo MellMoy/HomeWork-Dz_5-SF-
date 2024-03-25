@@ -41,7 +41,8 @@ class Search(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # context['filter'] = PostFilter(self.request.GET, queryset=self.get_queryset()) # Если выводить фильтр только через формы
+        # context['filter'] = PostFilter(self.request.GET, queryset=self.get_queryset()) # Если выводить фильтр
+        # только через формы
         context['filter'] = self.filter  # Если выводить фильтр не через формы
         context['list_in_page'] = self.paginate_by  # Для отображения кол-ва выведенных публикаций на странице
         context['all_posts'] = Post.objects.all()  # Для отображения общего кол-ва публикаций на сайте
